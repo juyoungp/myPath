@@ -1,0 +1,32 @@
+{
+attribution: "<a href='https://www.mapbox.com/about/maps/' target='_blank'>&copy; Mapbox &copy; OpenStreetMap</a> <a class='mapbox-improve-map' href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a>",
+autoscale: true,
+bounds: [
+-180,
+-85,
+180,
+85
+],
+center: [
+-74.00588035583496,
+40.72104672237615,
+14
+],
+data: [
+"http://a.tiles.mapbox.com/v3/juyoungp.i2hnol83/markers.geojsonp"
+],
+description: "",
+geocoder: "http://a.tiles.mapbox.com/v3/juyoungp.i2hnol83/geocode/{query}.jsonp",
+id: "juyoungp.i2hnol83",
+maxzoom: 19,
+minzoom: 0,
+name: "RingIt",
+private: true,
+scheme: "xyz",
+tilejson: "2.0.0",
+tiles: [
+"http://a.tiles.mapbox.com/v3/juyoungp.i2hnol83/{z}/{x}/{y}.png",
+"http://b.tiles.mapbox.com/v3/juyoungp.i2hnol83/{z}/{x}/{y}.png"
+],
+webpage: "http://a.tiles.mapbox.com/v3/juyoungp.i2hnol83/page.html"
+}

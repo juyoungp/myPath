@@ -1,0 +1,61 @@
+body {
+
+	color: #333;
+	font-size: 15px;
+
+}
+
+p {
+  font-family: 'Lobster', cursive;
+  font-size: 20px;
+}
+
+h1, h4 {
+  font-family: 'Lobster', cursive;
+}
+
+h2{
+	color: #cc0000;
+	font-family: 'Lobster', cursive;
+	font-size: 25px;
+}
+
+#map { 
+
+	position: absolute;
+	margin: 0 auto;
+	margin-left:20%;
+	margin-top: 50px;
+	width:60%; 
+	height: 45%;
+}
+
+
+#content {
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+#content2 {
+
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 350px;
+}
+
+#space{
+
+	margin:0 auto;
+	width: 70%;
+	margin-top: 55%;
+}
+
+
+.home {
+
+	margin: 0 auto;
+	text-align: center;
+
+}
+

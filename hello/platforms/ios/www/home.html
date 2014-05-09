@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/styleA.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.structure-1.4.2.min.css" />
+        <link rel='stylesheet' type="text/css" href="https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css" />
+        <link href="http://fonts.googleapis.com/css?family=Lobster" rel='stylesheet' type='text/css'>
+            
+        <script src="https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js"></script>
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/jquery.mobile-1.4.2.min.js"></script>
+
+        
+        <script type="text/javascript">
+            var map;
+            var latlist = ["40.74224172008897", "40.72809214560253", "40.74763815489693"];
+            var lonlist = ["-74.00545120239258", "-73.99112284183502", "-73.98635169695791"];
+            var polyline;
+            //var myLatlng;
+
+            function getLocation(){
+                var loc = document.getElementById('location');
+                if (navigator.geolocation){
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else {
+                    loc.innerHTML="Geolocation is not supported by this browser.";}
+            };
+            function showPosition(position){
+                var loc = document.getElementById('location');
+                //myLatlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                loc.innerHTML="<p> Path until Now </p>";
+                
+                map = L.mapbox.map('map', 'juyoungp.i2hlj8ej')
+                .setView([position.coords.latitude, position.coords.longitude], 13);
+                
+                polyline = L.polyline([]).addTo(map);
+                
+                var circle = L.circle([position.coords.latitude, position.coords.longitude], 100, {
+                                      color: '#990000',
+                                      fillColor: '#990000',
+                                      fillOpacity: 0.5
+                                      }).addTo(map);
+                                      
+                drawEverything();
+                 
+            };
+        
+        function drawEverything(){
+            var circle = L.circle([latlist[0], lonlist[0]], 100, {
+                                  color: '#990000',
+                                  fillColor: '#990000',
+                                  fillOpacity: 0.5
+                                  }).addTo(map);
+                                  
+                                  
+                                  var circle1 = L.circle([latlist[1], lonlist[1]], 100, {
+                                                         color: '#990000',
+                                                         fillColor: '#990000',
+                                                         fillOpacity: 0.5
+                                                         }).addTo(map);
+                                                         var circle2 = L.circle([latlist[2], lonlist[2]], 100, {
+                                                                                color: '#990000',
+                                                                                fillColor: '#990000',
+                                                                                fillOpacity: 0.5
+                                                                                }).addTo(map);
+                                                                                
+                                                                                for(var i=0; i<latlist.length; i++){
+                                                                                    polyline.addLatLng(L.latLng([latlist[i], lonlist[i]]));
+                                                                                }
+                                                                                polyline.addLatLng(L.latLng([latlist[0], lonlist[0]]));
+        };
+        
+        </script>
+    </head>
+
+
+    <body>
+        <br>
+        <div class="top" data-role="page" data-theme="a">
+            <div data-role="header" data-position="inline">
+                <h1>My Path</h1>
+
+                <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext ui-btn-b ui-btn-inline" onClick="window.location='index.html'">Home</a>
+
+            </div>
+ 
+
+            <div id='map'></div>
+
+            <div id="content2">
+                <div class="home">
+                    <div id="location"><p>Where am I?</p></div>
+                    <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-location" onClick="getLocation();">location</button>
+                </div>
+
+            </div><!--content2-->
+            <div data-role="footer" style="overflow:hidden;">
+                <h4 style="text-align:center;">My Path</h4>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html">Logout</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /footer -->
+
+        </div><!--header-->
+        
+    </body>
+</html>

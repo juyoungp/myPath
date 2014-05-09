@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/styleA.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.structure-1.4.2.min.css" />
+        <link href="http://fonts.googleapis.com/css?family=Lobster" rel='stylesheet' type='text/css'>
+
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/jquery.mobile-1.4.2.min.js"></script>
+        <title>My Path</title>
+    </head>
+    <body>
+        <br>
+        <div class="top" data-role="page" data-theme="a">
+            <div data-role="header" data-position="inline">
+                <h1>My Path</h1>
+                <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext ui-btn-b ui-btn-inline">Home</a>
+                <!-- <a href="#" data-icon="home" class="ui-btn-right"></a> -->
+                
+            </div><!-- /header -->
+            
+            <div id="content">
+                
+                <form>
+                    
+                    <p>Username:</p> <input type="text" name="username">
+                    <p>Password:</p> <input type="password" name="username">
+                            
+                    <input type="submit" value="Login" onclick="window.location='home.html'">
+                    <input type="button" value="Register" onclick="window.location='register.html'">
+                                
+                </form>
+                
+                
+            </div><!-- /content -->
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            <div data-role="footer" style="overflow:hidden;">
+                <h4 style="text-align:center;">My Path</h4>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html">Logout</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /footer -->
+            
+            
+            
+        </div><!--top-->
+        
+        
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+            </script>
+    </body>
+</html>
